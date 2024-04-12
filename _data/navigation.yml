@@ -1,16 +1,14 @@
 # main links links
 main:
-  - title: "Talks"
-    url: /talks/
 
   - title: "Projects"
     url: /projects/
 
-  - title: "Blog Posts"
+  - title: "Blog"
     url: /year-archive/
 
   - title: "Resume"
-    url: /cv/
+    url: /resume/
 
-  - title: "Guide"
+  - title: "Extra"
     url: /markdown/

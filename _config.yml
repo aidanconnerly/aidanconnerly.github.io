@@ -6,29 +6,31 @@
 # `jekyll serve -l -H localhost`. If you change this file, please restart the
 # server process.
 
+#HELPFUL INFO: https://academicpages.github.io/markdown/
+
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Aidan Connerly"
+title                    : "Aidan Connerly's Site"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Aidan Connerly"
 description              : &description "Physics, Math, Technology"
 url                      : https://aidanconnerly.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "/aidanconnerly/aidanconnerly.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  avatar           : "profile.jpg"
+  name             : "Aidan Connerly"
   pronouns         : # example: "she/her"
-  bio              : "I'm a student at Bowdoin College currently studying physics and math."
+  bio              : "Physics and Math Student at Bowdoin College"
   location         : "Brunswick, ME"
   employer         : "Bowdoin College"
   uri              : # URL
-  email            : "aconnerl@bowdoin.edu"
+  email            : # "aconnerl@bowdoin.edu"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -43,7 +45,7 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "aidanconnerly"
-  kaggle           : "aidanconnerly"
+  kaggle           : # aidanconnerly
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 
   # Social media
@@ -254,7 +256,7 @@ defaults:
   # _portfolio
   - scope:
       path: ""
-      type: portfolio
+      type: projects
     values:
       layout: single
       author_profile: true

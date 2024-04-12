@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "CV"
-permalink: /cv/
+title: "Resume"
+permalink: /resume/
 author_profile: true
 redirect_from:
   - /resume
@@ -11,54 +11,32 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Bachelor's in Physics, Mathematics from Bowdoin College
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Summer 2023: NASA Space Communications and Navigations (SCaN) Intern
+  * Washington, DC
+  * Applying interval analysis to quantum harmonic oscillator
+  * Supervisors: Dr. Nasser Barghouty and Pat Eblen
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2022: Data & Machine Learning Intern
+  * Prospector LLC
+  * Collect company and mining data from technical reports to train machine learning models.
+  * Create corporate KPIs for mining companies
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* Python
+* R
+* LaTeX
+* Excel
   
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
   
 Teaching
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Fall 2022 - Spring 2024: Bowdoin Physics Department TA/Grader
+  * Lead weekly “Learning Groups” consisting of ~10 students for Intro Physics II to teach and reinforce class material.
+  * Coordinate sessions outside of class for other students and TAs.
+  * Help students with course assignments in 1-on-1 and group settings.
+  * Grade weekly problem sets and provide helpful feedback/advice on students’ work.
