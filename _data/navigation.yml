@@ -1,11 +1,11 @@
-# main links links
+# main links
 main:
 
   - title: "Projects"
     url: /projects/
 
   - title: "Blog"
-    url: /blog/
+    url: /year-archive/
 
   - title: "Resume"
     url: /resume/
