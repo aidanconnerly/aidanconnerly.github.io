@@ -5,10 +5,10 @@ main:
     url: /projects/
 
   - title: "Blog"
-    url: /posts/
+    url: /blog/
 
   - title: "Resume"
     url: /resume/
 
-  - title: "Extra"
-    url: /extra/
+  # - title: "Extra"
+  #   url: /extra/

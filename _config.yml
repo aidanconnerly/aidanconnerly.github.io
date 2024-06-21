@@ -26,7 +26,7 @@ author:
   avatar           : "profile.jpg"
   name             : "Aidan Connerly"
   pronouns         : # example: "she/her"
-  bio              : "Physics and Math Student at Bowdoin College"
+  bio              : "Recent Graduate in Physics and Mathematics"
   location         : "Brunswick, ME"
   employer         : "Bowdoin College"
   uri              : # URL
@@ -58,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # username
+  linkedin         : aidan-connerly-875420226
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -217,7 +217,7 @@ collections:
 
 # Defaults
 defaults:
-  # _posts
+  # _blog
   - scope:
       path: ""
       type: posts
