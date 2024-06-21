@@ -5,8 +5,6 @@ permalink: /blog/2024/04/parallel-axis-theorem/
 tags:
   - physics
 ---
-Sorry, but the page you were trying to view does not exist.
-
 
 This post mainly serves to test of the LaTeX functionality of my website.
 
