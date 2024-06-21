@@ -16,7 +16,13 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+#use this line when committing to main
+# gem "wdm", "~> 0.1.0" if Gem.win_platform?
+
+#for some reason can only run locally with the line below
+gem 'wdm', '~> 0.1.0', :platforms => [:mingw, :mswin]
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
