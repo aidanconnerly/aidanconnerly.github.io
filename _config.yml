@@ -27,8 +27,8 @@ author:
   name             : "Aidan Connerly"
   pronouns         : # example: "she/her"
   bio              : "Recent Graduate in Physics and Mathematics"
-  location         : "Brunswick, ME"
-  employer         : "Bowdoin College"
+  location         : "United States"
+  employer         : # "Bowdoin College"
   uri              : # URL
   email            : # "aconnerl@bowdoin.edu"
 

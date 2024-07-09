@@ -11,7 +11,7 @@ This post mainly serves to test of the LaTeX functionality of my website.
 # Generalized Parallel Axis Theorem
 ## The (easier) Parallel Axis Theorem
 
-To derive the parallel axis theorem, let's consider the kinetic energy of a rotating rigid object of mass $M$ about some axis. By definition, the kinetic energy of the object is
+To derive the parallel axis theorem, let's consider the kinetic energy of a rotating rigid object of mass $$M$$ about some axis. By definition, the kinetic energy of the object is
 
 $$
 T_{sys} = \frac{1}{2} \int dm (\mathbf{\omega} \times \mathbf{r})^2
