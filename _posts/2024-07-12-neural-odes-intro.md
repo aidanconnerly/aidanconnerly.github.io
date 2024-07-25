@@ -17,7 +17,7 @@ $$\mathcal{D} = \{ (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}$$
 Goal: given an *unseen* data point $$x'$$, how do we build a model to predict the corresponding $$y'$$ ?
 
 <figure style="display: block; margin: auto; text-align: center;">
-    <img src="{{aidanconnerly.github.io}}/images/model_examples.png" alt="Possible Models" style="display: block; margin: auto;" />
+    <img src="{{aidanconnerly.github.io}}/images/neural_odes/model_examples.png" alt="Possible Models" style="display: block; margin: auto;" />
     <figcaption>Which model do you think would make the best predictions on unseen data?</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ where  $$y_i$$ is the "true value", $$\hat{y}_i$$ is the model's predicted value
 Machine learning now becomes an *optimization* problem: how do we tune our model's parameters to obtain the smallest loss?
 
 <figure style="display: block; margin: auto; text-align: center;">
-    <img src="{{aidanconnerly.github.io}}/images/grad-visualization.png" alt="Possible Models" style="display: block; margin: auto;" />
+    <img src="{{aidanconnerly.github.io}}/images/neural_odes/grad-visualization.png" alt="Possible Models" style="display: block; margin: auto;" />
     <figcaption>Decreasing loss improves model accuracy</figcaption>
 </figure>
 
@@ -60,7 +60,7 @@ Recall that the *gradient* of a function tells us the direction of steepest incr
 After obtaining the gradient, we can move in the direction that best decreases our loss. The *optimizer* calculates how much and in which direction to adjust model parameters.
 
 <figure style="display: block; margin: auto; text-align: center;">
-    <img src="{{aidanconnerly.github.io}}/images/grad-desc.gif" alt="Animation of Gradient Descent" style="display: block; margin: auto;" />
+    <img src="{{aidanconnerly.github.io}}/images/neural_odes/grad-desc.gif" alt="Animation of Gradient Descent" style="display: block; margin: auto;" />
     <figcaption>Minimizing loss with gradient descent</figcaption>
 </figure>
 
@@ -98,14 +98,14 @@ $$z_{n+1} = z_n + \Delta t \frac{dz}{dt}, \quad n = 0, 1, 2, \ldots$$
 The gradient $$\frac{dz}{dt}$$ tells us in which direction to move, and $$\Delta t$$ tells us by how much (smaller $$\Delta t$$ gives better approximations at the cost of more computation since we take many more small steps to reach the same end point).
 
 <figure style="display: block; margin: auto; text-align: center;">
-    <img src="{{aidanconnerly.github.io}}/images/euler_method_animation.gif" alt="Animation of Euler's Method" style="display: block; margin: auto;" />
+    <img src="{{aidanconnerly.github.io}}/images/neural_odes/euler_method_animation.gif" alt="Animation of Euler's Method" style="display: block; margin: auto;" />
     <figcaption>Approximating a sine curve with Euler's method</figcaption>
 </figure>
 
 How does this relate to machine learning? Well, let's take another look at neural networks:
 
 <figure style="display: block; margin: auto; text-align: center;">
-    <img src="{{aidanconnerly.github.io}}/images/neuralnet-photo.png" alt="Neural Network" style="display: block; margin: auto;" />
+    <img src="{{aidanconnerly.github.io}}/images/neural_odes/neuralnet-photo.png" alt="Neural Network" style="display: block; margin: auto;" />
     <figcaption>
     Example of a neural network with 4 hidden layers<br>
     <a href="https://alexlenail.me/NN-SVG/" target="_blank" style="color: #0066cc; text-decoration: none;">Source</a>
@@ -133,7 +133,7 @@ $$h_{t+1} = h_t + \int_{t}^{t+1} f(h(t'), t', \theta) dt'$$
 Remember, the above equation is an *exact* solution to the hidden states differential equation. We approximate $$h_{t+1}$$ using a numerical integration scheme of our choice.
 
 <figure style="display: block; margin: auto; text-align: center;">
-    <img src="{{aidanconnerly.github.io}}/images/ode-vs-resnet.png" alt="Neural Network" style="display: block; margin: auto;" />
+    <img src="{{aidanconnerly.github.io}}/images/neural_odes/ode-vs-resnet.png" alt="Neural Network" style="display: block; margin: auto;" />
     <figcaption>
     Residual Network vs ODE Network from the
     <a href="https://arxiv.org/pdf/1806.07366" target="_blank" style="color: #0066cc; text-decoration: none;">original paper</a>

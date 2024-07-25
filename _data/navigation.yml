@@ -2,7 +2,7 @@
 main:
 
   - title: "Projects"
-    url: /projects/
+    url: /portfolio/
 
   - title: "Blog"
     url: /blog/
@@ -10,5 +10,5 @@ main:
   - title: "Resume"
     url: /resume/
 
-  # - title: "Extra"
-  #   url: /extra/
+  # - title: "Projects"
+  #   url: /projects/
