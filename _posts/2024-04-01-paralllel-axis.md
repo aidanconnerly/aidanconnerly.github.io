@@ -41,7 +41,17 @@ Therefore, we're left with the expression
 $$
 \begin{aligned}
 T_{sys} &= \frac{1}{2}M \mathbf{v}_{cm}^2 + T_{sys}' \\
-&= \frac{1}{2}M \mathbf{\omega}^2 \mathbf{r}_{cm}^2 + \frac{1}{2}I' \mathbf{\omega}^2
+&= \frac{1}{2}M \mathbf{\omega}^2 \mathbf{r}_{cm}^2 + \frac{1}{2}I' \mathbf{\omega}^2 \\
+&= \frac{1}{2}\mathbf{\omega}^2 (M \mathbf{r}_{cm}^2 + I')
 \end{aligned}
 $$
+
+Therefore, the moment of inertia $$I$$ can be written as:
+
+$$I = (M \mathbf{r}_{cm}^2 + I')$$
+
+which is the Parallel Axis Theorem we all know and love.
+
+## Generalizing with tensors
+*work in progress*
 

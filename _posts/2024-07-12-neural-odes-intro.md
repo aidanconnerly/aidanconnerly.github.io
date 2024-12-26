@@ -14,7 +14,7 @@ We can describe many natural processes via differential equations: the motion of
 
 $$\mathcal{D} = \{ (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}$$
 
-Goal: given an *unseen* data point $$x'$$, how do we build a model to predict the corresponding $$y'$$ ?
+**Goal:** given an *unseen* data point $$x'$$, how do we build a model to predict the corresponding $$y'$$ ?
 
 <figure style="display: block; margin: auto; text-align: center;">
     <img src="{{aidanconnerly.github.io}}/images/neural_odes/model_examples.png" alt="Possible Models" style="display: block; margin: auto;" />
@@ -25,12 +25,14 @@ The usual approach is to approximate nature's data-generating function $$f$$ wit
 
 $$f(x') \approx \widehat{f}(x')$$
 
-To make good predictions requires building a sufficiently complex model and employing effective training methods such that generalize well to new data, accurately capturing patterns present in the data set.
+To make good predictions requires building and training sufficiently robust models that generalizes well to new data.
 
 ## Training Neural Networks
 Let's recall what the typical training loop of a neural network looks like:
 
 **Forward pass**: make predictions with the neural network
+
+$$\text{Predictions} = \text{NN}(\text{Input Data})$$
 
 Remember, neural networks are functions. That is, a neural network simply takes in a number/vector and spits out a number/vector as a prediction.
 
@@ -44,9 +46,9 @@ $$\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$$
 
 where  $$y_i$$ is the "true value", $$\hat{y}_i$$ is the model's predicted value, and $$n$$ is the number of data points. The choice of loss function depends on the given problem (what types of errors should be penalized the most, and by how much?). Regardless of loss function, we want to adjust neural network parameters to minimize loss.
 
-**Backward pass**: calculate gradients with respect to the loss
-
 Machine learning now becomes an *optimization* problem: how do we tune our model's parameters to obtain the smallest loss?
+
+**Backward pass**: calculate gradients with respect to the loss
 
 <figure style="display: block; margin: auto; text-align: center;">
     <img src="{{aidanconnerly.github.io}}/images/neural_odes/grad-visualization.png" alt="Possible Models" style="display: block; margin: auto;" />
@@ -57,7 +59,7 @@ Recall that the *gradient* of a function tells us the direction of steepest incr
 
 **Optimizer step**: update model parameters
 
-After obtaining the gradient, we can move in the direction that best decreases our loss. The *optimizer* calculates how much and in which direction to adjust model parameters.
+After obtaining the gradient, we can move in the direction (update parameters) that most decreases our loss. The *optimizer* calculates how much and in which direction to adjust model parameters.
 
 <figure style="display: block; margin: auto; text-align: center;">
     <img src="{{aidanconnerly.github.io}}/images/neural_odes/grad-desc.gif" alt="Animation of Gradient Descent" style="display: block; margin: auto;" />
@@ -77,7 +79,7 @@ The core idea behind NeuralODEs is to replace $$f$$ with a neural network $$NN$$
 
 $$\frac{d\mathbf{z}}{dt} = NN(\mathbf{z}(t), t)$$ 
 
-ODEs are extensively studied because they frequently appear in many fields, so we have developed numerous methods to approximate their solutions.  We'll soon see how modeling derivatives of functions can yield better performance than other machine learning models.
+Since ODEs appear in many fields, we have numerous methods to approximate their solutions. Modeling data as a differential equation allows us to make continuous-time predictions and can provide a better understanding of the underlying mechanisms.
 
 ## Connecting ResNets to Euler's Method
 
@@ -89,7 +91,7 @@ $$\frac{dz}{dt} \approx \frac{z(t+\Delta t) - z(t)}{\Delta t}$$
 
 for some small value $$\Delta t$$, which we will call the **step-size**. A simple rearrangement yields:
 
-$$z(t + \Delta t) \approx z(x) + \Delta t \frac{dz}{dt}$$
+$$z(t + \Delta t) \approx z(t) + \Delta t \frac{dz}{dt}$$
 
 We use the expression above to approximate points of $$z(t)$$, denoted as $$z_i$$, assuming we have some starting point $$z_0$$ with the following recursive formula:
 
@@ -118,7 +120,7 @@ Let $$f$$ be the function that maps a hidden state $$h_i$$ to the subsequent hid
 
 $$h_{t+1} = f(h_t, \theta_t)$$
 
-Now, consider a common neural network architecture called Residual Neural Networks (ResNets). ResNets introduce shortcut connections that allow information to bypass intermediate layers, meaning the output of a hidden layer can include contributions from multiple preceding layers. Part of the reason ResNets were developed was improve gradient stability during training. In the case where a layer takes in outputs from the previous two layers, we modify the above formula slightly:
+Now, consider a common neural network architecture called **Residual Neural Networks** (ResNets). ResNets introduce shortcut connections that allow information to bypass intermediate layers, meaning the output of a hidden layer can include contributions from multiple preceding layers. ResNets were initially developed to improve gradient stability while training neural networks. In the case where a layer takes in outputs from the previous two layers, we modify the above formula slightly:
 
 $$h_{t+1} = h_t + f(h_t, \theta_t)$$
 
@@ -140,7 +142,7 @@ Remember, the above equation is an *exact* solution to the hidden states differe
 </figcaption>
 </figure>
 
-The key takeaway is to understand that NeuralODEs consist of 2 main components: 
+We can see that ODE Networks "smooth out" the hidden states. The key takeaway is to understand that NeuralODEs consist of 2 main components: 
 
 1. The neural network as the underlying differential equation $$\frac{dz}{dt} = NN(z(t), t)$$
 2. The numerical ODE solver, which acts as a continuous-depth, improved version of the ResNet architecture.
@@ -149,13 +151,48 @@ The key takeaway is to understand that NeuralODEs consist of 2 main components:
 
 But how does one train a NeuralODE?
 
-*work in progress*
+**Forward pass**: Solve the differential equation
+
+Given an inital condition $$z(t_0)$$, use a numerical solver $$\text{ODESolve}$$ to solve the differential equation $$\frac{dz}{dt} = f_{\theta}(z(t), t)$$.
+
+ Here $$f$$ is the neural network (or whatever you're using) with parameters $$\theta$$.
+
+$$z(t) = \text{ODESolve} \left( \frac{dz}{dt} = f_{\theta}(z(t), t), z(t_0)\right)$$
+
+We can choose $$\text{ODESolve}$$ to be anything we want (Euler's method, RK4, etc.), which allows us to balance speed and accuracy to our liking.
+
+**Compute loss**: calculate neural network error
+
+Once we have the trajectory $$z(t)$$, we calculate the error (your metric of choice) between the predictions $$z(t_i)$$ and the data $$y_i$$.
+
+$$\text{Loss} = \frac{1}{n} \sum_{i=1}^{n} \text{loss}(z(t_i), y_i)$$
+
+**Backward pass**: calculate gradients with respect to the loss
+
+Calculating NeuralODE gradients is much different than for standard neural nets. To update $$\theta$$, we need the gradient of the loss with respect to the parameters of $$f_\theta$$. The authors in the <a href="https://arxiv.org/pdf/1806.07366" target="_blank" style="color: #0066cc; text-decoration: none;">original paper</a> used an **adjoint method**. I won't go into the full details in this post (something to do for the future), but it's an extremely clever method for propogating loss *continuously*.
+
+In traditional Neural Networks, we can use the chain rule to calculate the gradients with respect to parameter $$\theta_i$$: 
+
+$$\frac{\partial \mathcal{L}}{\partial \theta_i} = \frac{\partial \mathcal{L}}{\partial y_n} \frac{\partial y_n}{\partial y_{n-1}} \cdots \frac{\partial y_2}{\partial y_1} \frac{\partial y_1}{\partial \theta_i}
+$$
+
+In NeuralODEs, we use an instantaneous analog of the chain rule. The paper uses an *adjoint state* term $$a(t)$$ to arrive at the equation:
+
+$$\frac{\partial L}{\partial \theta} = \int_{t_1}^{t_0}a(t)^T \frac{\partial f(z(t), t, \theta)}{\partial \theta} dt$$
+
+Intuitively, the above equation adds up the influence of each time step (scaled by $$a(t)$$) multiplied by the gradient of the output, giving us the "overall" gradient.
+
+**Optimizer step**: update model parameters
+
+Once we compute the gradients, we can use our optimizer of choice (SGD, Adam, etc) to update the parameters $$\theta$$.
 
 ## Pros and Cons of NeuralODEs
 Why would we want to do this in the first place? Well, there are a few advantages: 
 
-* Efficiency: In some cases, NeuralODEs use less memory and fewer parameters to achieve similar results to architectures such as ResNet.
+* **Efficiency**: In some cases, NeuralODEs use less memory and fewer parameters to achieve similar results to architectures such as ResNet.
 
-* Choose our tradeoffs: As we'll see later, utilizing NeuralODEs depends on our ODE solver which grants us more flexibility to trade-off between speed and precision
+* **Choose our tradeoffs**: Utilizing NeuralODEs depends on our ODE solver which grants us more flexibility to trade-off between speed and precision
 
-* Irregular time series: Fitting time series models especially with irregularly sampled data is difficult. By design, NeuralODEs can handle this much better.
+* **Irregular time series**: Fitting time series models especially with irregularly sampled data is difficult. By design, NeuralODEs can handle this much better.
+
+I plan to continue posting about some examples of NeuralODEs in the future.

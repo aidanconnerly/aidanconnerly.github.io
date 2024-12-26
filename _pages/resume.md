@@ -11,7 +11,8 @@ redirect_from:
 
 Education
 ======
-* Bachelor's in Physics, Mathematics from Bowdoin College
+* Current Data Science Master's student at UC Berkeley 
+* BA in Physics and Mathematics from Bowdoin College
 
 Work experience
 ======
@@ -24,19 +25,15 @@ Work experience
   * Prospector LLC
   * Collect company and mining data from technical reports to train machine learning models.
   * Create corporate KPIs for mining companies
-  
-Skills
-======
-* Python
-* R
-* LaTeX
-* Excel
-  
-  
+
 Teaching
 ======
 * Fall 2022 - Spring 2024: Bowdoin Physics Department TA/Grader
-  * Lead weekly “Learning Groups” consisting of ~10 students for Intro Physics II to teach and reinforce class material.
-  * Coordinate sessions outside of class for other students and TAs.
-  * Help students with course assignments in 1-on-1 and group settings.
-  * Grade weekly problem sets and provide helpful feedback/advice on students’ work.
+  * Lead weekly class review sessions to supplement/reinforce material from class
+  * Manage and coordinate schedules for 6 teaching assistants, organize additional sessions, and ensure smooth communication w/ professors
+  * Grade weekly problem sets
+  
+Skills
+======
+Python, R, SQL, LaTeX, Mathematica  
+  
