@@ -6,7 +6,7 @@ tags:
   - physics
 ---
 
-This post mainly serves to test of the LaTeX functionality of my website.
+*Testing LaTeX on this site with some physics fun.*
 
 # Generalized Parallel Axis Theorem
 ## The (easier) Parallel Axis Theorem
