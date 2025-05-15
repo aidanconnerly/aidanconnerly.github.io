@@ -1,12 +1,10 @@
 ---
 title: "An Introduction to Quantitative Sports Betting"
-date: 2024-12-25
-permalink: /blog/2024/12/guide-to-sports-betting/
-tags:
-  - sports
-  - statistics
+excerpt: "My comprehensive guide to profitable sports betting (and how I got banned) <br/><img src='/images/sports_betting/montecarlo2.png' style='width: 350px; height: auto'>"
+collection: portfolio
+permalink: /portfolio/sports_betting/
+layout: archive
 ---
-
 *A comprehensive guide to profitable sports betting (and how I got banned)*
 
 ## Introduction
