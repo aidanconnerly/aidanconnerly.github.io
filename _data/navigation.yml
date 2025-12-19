@@ -1,0 +1,14 @@
+# main links
+main:
+
+  - title: "Projects"
+    url: /portfolio/
+
+  - title: "Blog"
+    url: /blog/
+
+  - title: "Resume"
+    url: /resume/
+
+  # - title: "Projects"
+  #   url: /projects/
