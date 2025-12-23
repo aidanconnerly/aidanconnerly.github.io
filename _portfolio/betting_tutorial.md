@@ -58,7 +58,7 @@ Imagine betting $10 on a fair coin flip. Since the coin has a 50–50 chance of 
 </figure>
 
 
-The answer is $20, or more generally, **2x your wager**. If you win half the time and lose half the time, a fair payout ensures that, over many bets, your gains and loses cancel out. You neither win nor lose money in the long run.
+The answer is $20, or more generally, **2x your wager**. If you win half the time and lose half the time, a fair payout ensures that, over many bets, your gains and losses cancel out. You neither win nor lose money in the long run.
 
 Mathematically, we say that if the **expected value (EV)** of a bet is zero, then the bet is **fair**:
 
@@ -139,7 +139,7 @@ Here, the vig jumps to $$8.9\%$$. With less betting volume and weaker data, Draf
 ## Exploiting Market Inefficiencies
 Sportsbooks set odds using statistical models, historical data, and input from sharp bettors, creating *markets* that aggregate public opinion and information. Companies like FanDuel and DraftKings hire experienced analysts and data scientists to price their lines as accurately as possible.
 
-In an *efficient market*, the odds closely reflect the true probabilities of outcomes, leaving little room for bettors to find an edge. Mainstream markets like NFL moneylines often to fall into this category. 
+In an *efficient market*, the odds closely reflect the true probabilities of outcomes, leaving little room for bettors to find an edge. Mainstream markets like NFL moneylines often fall into this category. 
 
 However, sportsbooks aren't just in the business of accuracy; they're in the business of engagement. For any given game, they may offer hundreds of additional markets designed to attract casual bettors. These smaller markets are often **less efficient**:
 
@@ -171,7 +171,7 @@ Of course, coin flips are easy but real sports are messier. So how do bettors es
 
 There are two broad strategies bettors use to identify +EV bets: **bottom-up** and **top-down**.
 
-1. **Bottom-Up:** Bottom-up bettors create independent models to predict outcomes, then compare those predictions to sportsbook odds. For example, if a model estimates team has a $$45\%$$ chance of winning, but the sportsbook implies $$40\%$$, then the bettor has identified a potential value bet.
+1. **Bottom-Up:** Bottom-up bettors create independent models to predict outcomes, then compare those predictions to sportsbook odds. For example, if a model estimates a team has a $$45\%$$ chance of winning, but the sportsbook implies $$40\%$$, then the bettor has identified a potential value bet.
 - __Pros__: independent edges, potential for higher returns
 - __Cons__: requires extensive data, domain expertise, and specialization; hard to quantify your edge
 
@@ -179,7 +179,7 @@ There are two broad strategies bettors use to identify +EV bets: **bottom-up** a
 - __Pros__: requires minimal sports knowledge, quantifiable edge, leverages sharp market consensus
 - __Cons__: smaller margins, requires constant monitoring, lines move quickly
 
-The most profitable bettors often combine both approaches: bottom-up models to estimate probabilites, and top-down comparisons to find the best available price.
+The most profitable bettors often combine both approaches: bottom-up models to estimate probabilities, and top-down comparisons to find the best available price.
 
  In my case, I relied exclusively on a top-down approach since I didn't have the expertise or resources to build reliable models from scratch.
 
@@ -252,7 +252,7 @@ Retail sportsbooks are the big names you've seen advertised everywhere. Their pr
 
 Retail sportsbooks price their odds conservatively and often use third-party odds providers. While some retail books do run internal models and accept sharp action in limited markets, they closely monitor winning players.
 
-Once a bettor demonstrates consistent profitability, retail sportsoboks typically respond by limiting bet sizes. In my experience, I've been restricted to $$\$10$$ or less per bet on several major platforms:
+Once a bettor demonstrates consistent profitability, retail sportsbooks typically respond by limiting bet sizes. In my experience, I've been restricted to $$\$10$$ or less per bet on several major platforms:
 
 <figure style="display: flex; justify-content: center; gap: 20px; text-align: center;">
     <div style="display: block; margin: auto; text-align: center;">
@@ -313,9 +313,9 @@ In summary, retail sportsbooks are where most inefficiencies live, but they also
     </figcaption>
 </figure>
 
-Betting exchanges operate differently from traditional sportsbooks. Instead of betting against the house, bettors trade trade directly with one another. The exchange simply facilitates these trades and charges a small fee, meaning its business model prioritizes **betting volume**, not bettor losses.
+Betting exchanges operate differently from traditional sportsbooks. Instead of betting against the house, bettors trade directly with one another. The exchange simply facilitates these trades and charges a small fee, meaning its business model prioritizes **betting volume**, not bettor losses.
 
-This structure allows exchanges to offer highly competitive odds and avoid limitng winning players. However, exchange prices depend heavily on market liquidity, and on *who* is providing that liquidity.
+This structure allows exchanges to offer highly competitive odds and avoid limiting winning players. However, exchange prices depend heavily on market liquidity, and on *who* is providing that liquidity.
 
 An exchange line may look sharp, but without enough volume, it may not reflect true consensus pricing. In thin markets, prices are often set by a small number of participants, many of whom are experienced bettors. This introduces a risk known as **adverse selection**: when you accept a bet, the person on the other side may be offering it precisely because the price favors them.
 
@@ -333,7 +333,7 @@ Suppose A receives early information that the coin is slightly rigged, and the t
 
  This is **adverse selection**. On a betting exchange, *you are the counterparty*. In highly liquid markets, prices converge toward fair value. In illiquid markets, attractive looking lines may reflect another sharp bettor's edge rather than a true mispricing.
 
-Before placing bets on an exchange, always consider the available liquidy and betting limits of the market.
+Before placing bets on an exchange, always consider the available liquidity and betting limits of the market.
 
 Well-known betting exchanges include:
 - ProphetX
@@ -347,7 +347,7 @@ For top-down betting strategies, *who sets the line* is just as important as the
 
 Market making sportsbooks produce some of the sharpest odds available and are best treated as a reference point for fair pricing. On the other hand, retail sportsbooks post many inefficient odds, but they also react quickly by limiting winning players. Betting exchanges can offer excellent prices, but only when liquidity is high enough to prevent adverse selection.
 
-In practice, sportsbooks don't fall neatly into one category. For example, FanDuel prices player props very sharply while morket makers may be less reliable in these niche markets. Understanding which sportsbooks are sharp in which markets allows you to:
+In practice, sportsbooks don't fall neatly into one category. For example, FanDuel prices player props very sharply while market makers may be less reliable in these niche markets. Understanding which sportsbooks are sharp in which markets allows you to:
 - Identify true pricing discrepancies
 - Avoid mistaking adverse selection for value
 - Choose the right books to anchor your probability estimates.
@@ -403,6 +403,6 @@ $$\text{Is this price better than it should be?}$$
 
 As your bet size grows, the game also changes. The challenge shifts from finding +EV bets to getting enough money down before limits or liquidity become the bottleneck.
 
-What I find most interesting about betting markets is that they turn messy real world questions into probabilities. That idea extends well beyon dsports. Election betting markets, for example, have historically been remarkably accurate predictors of outcomes, often outperforming traditional polling. During the 2024 election, I followed odds platforms like Polymarket. If you're curious about how accurate election markets have been historically, check out <a href="https://electionbettingodds.com/TrackRecord.html" target="_blank" style="color: #0066cc; text-decoration: underline;">this track record</a>.
+What I find most interesting about betting markets is that they turn messy real world questions into probabilities. That idea extends well beyond sports. Election betting markets, for example, have historically been remarkably accurate predictors of outcomes, often outperforming traditional polling. During the 2024 election, I followed odds on platforms like Polymarket. If you're curious about how accurate election markets have been historically, check out <a href="https://electionbettingodds.com/TrackRecord.html" target="_blank" style="color: #0066cc; text-decoration: underline;">this track record</a>.
 
 Markets teach us how to think probabilistically, identify inefficiencies, and manage risk. Even amid uncertainty, patterns and opportunities emerge for those who know where to look.
