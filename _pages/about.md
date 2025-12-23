@@ -7,17 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-**Hey!** 
-
-I'm a machine learning engineer in the streaming space, currently pursuing my master's degree in Data Science at UC Berkeley. In undergrad, I studied physics and math at Bowdoin College where I fell in love with mathematical modeling and machine learning.
-
-Outside of work, I love playing tennis, soccer, or snowboarding. I also dabble in poker, chess, and speedsolving Rubik's cubes. I'm always looking for ways to blend my hobbies and academic interests.
-
-This website serves as a hub for sharing my projects and thoughts. Thanks for stopping by!
+I'm a machine learning engineer in the streaming space with a background in physics and math. Outside of work, I'm interested in games of chance..
 
 <figure style="display: block; margin: auto; text-align: center;">
-    <img src="{{aidanconnerly.github.io}}/images/me_and_astronaut.jpg" alt="dating image" style="display: block; margin: auto; width: 300px; height: auto;" />
-    <figcaption>
-    NASA Headquarters
-</figcaption>
+    <img src="{{aidanconnerly.github.io}}/images/me_and_astronaut.jpg" alt="me and astronaut" style="display: block; margin: auto; width: 300px; height: auto;" />
 </figure>
